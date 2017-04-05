@@ -1,7 +1,8 @@
 package com.twitter.poruke;
 
 /**
- * Klasa TwitterPoruka predstavlja jednu poruku na twitteru. Ima ime korisnika i sadrzaj poruke.
+ * Klasa TwitterPoruka predstavlja jednu poruku na twitteru. Ima ime korisnika i
+ * sadrzaj poruke.
  * 
  * @author stefan
  * @version 1.0
@@ -27,7 +28,7 @@ public class TwitterPoruka {
 
 	/**
 	 * @param korisnik
-	 *            - ime korisnika
+	 *            ime korisnika
 	 * @throws java.lang.RuntimeException
 	 *             Ako je:
 	 *             <ul>
@@ -36,7 +37,7 @@ public class TwitterPoruka {
 	 *             </ul>
 	 */
 	public void setKorisnik(String korisnik) {
-		if (korisnik == null || !korisnik.isEmpty())
+		if (korisnik == null || korisnik.isEmpty())
 			throw new RuntimeException("Ime korisnika mora biti uneto");
 		this.korisnik = korisnik;
 	}
@@ -46,7 +47,7 @@ public class TwitterPoruka {
 	 * @return sadrzaj poruke
 	 */
 	public String getPoruka() {
-		return "poruka";
+		return this.poruka;
 	}
 
 	/**
@@ -61,10 +62,10 @@ public class TwitterPoruka {
 	 *             <li>prazan string</li>
 	 *             <li>duzina poruke veca od 140 karaktera</li>
 	 *             </ul>
-	 *             
+	 * 
 	 */
 	public void setPoruka(String poruka) {
-		if (this.poruka == null || this.poruka == new String("") || this.poruka.length() > 140)
+		if (poruka == null || poruka.equals("") || poruka.length() > 140)
 			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
 		this.poruka = poruka;
 	}
